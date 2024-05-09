@@ -60,15 +60,15 @@ const App = () => {
     animatedImgWidth.value = withSpring(300);
     animatedImgHeight.value = withSpring(300);
     animatedImgY.value = withSpring(200);
-    animatedBtnScale.value = 1;
+    animatedBtnScale.value = withTiming(1, {duration: 200});
   }
 
   //function to animate the cross button
   const onClickCrossBtn = () => {
-    animatedBtnScale.value = withSpring(0);
+    animatedBtnScale.value = 0;
     animatedImgWidth.value = withSpring(80);
     animatedImgHeight.value = withSpring(80);
-    animatedImgY.value = 0;
+    animatedImgY.value = withTiming(0, {duration: 200});
   }
 
   return (
@@ -80,7 +80,7 @@ const App = () => {
       >
         <Text style={{fontSize: 20}}>Animate after 2sec</Text>
       </TouchableOpacity> */}
-      <AnimatedCrossBtn style={[{margin: 20}, animatedBtnStyle]} onPress={() => onClickCrossBtn()}>
+      <AnimatedCrossBtn style={[{margin: 20, width: 30, height: 30, alignItems:"center", justifyContent:"center"}, animatedBtnStyle]} onPress={() => onClickCrossBtn()}>
         <Image source={require('./src/assets/images/cross.png')} style={{width: 20, height: 20}} />
       </AnimatedCrossBtn>
       <TouchableOpacity activeOpacity={1} style={{alignItems:"center", justifyContent:'center'}} onPress={() => animateTheImage()}>
