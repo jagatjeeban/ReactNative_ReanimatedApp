@@ -73,13 +73,6 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.safeAreaView}>
-      {/* <Animated.View style={[{width: 100, height: 100, backgroundColor:'red'}, animatedStyle]} />
-      <TouchableOpacity 
-        onPress={() => animateSquareToCircle()} 
-        style={{height: 50, marginHorizontal:30, marginTop:"50%", alignItems:'center', justifyContent:"center", backgroundColor:'white'}}
-      >
-        <Text style={{fontSize: 20}}>Animate after 2sec</Text>
-      </TouchableOpacity> */}
       <AnimatedCrossBtn style={[{margin: 20, width: 30, height: 30, alignItems:"center", justifyContent:"center"}, animatedBtnStyle]} onPress={() => onClickCrossBtn()}>
         <Image source={require('./src/assets/images/cross.png')} style={{width: 20, height: 20}} />
       </AnimatedCrossBtn>
